@@ -17,9 +17,9 @@ import {
   Code2,
   Sparkles,
   Zap,
-  Activity,
   CheckCircle2,
-  Hotel
+  Hotel,
+  ArrowUpRight
 } from "lucide-react";
 
 interface SubLink {
@@ -27,15 +27,14 @@ interface SubLink {
   url: string;
   badge?: string;
   icon: any;
-  desc?: string;
 }
 
 interface LiveSite {
   id: string;
   title: string;
   category: string;
-  hostBadge: string;
-  hostColor: string;
+  platform: string;
+  platformColor: string;
   status: string;
   url: string;
   description: string;
@@ -54,7 +53,7 @@ export default function LiveWebsites() {
     setCopiedUrl(url);
     setTimeout(() => {
       setCopiedUrl(null);
-    }, 2200);
+    }, 2000);
   };
 
   const liveSites: LiveSite[] = [
@@ -62,185 +61,147 @@ export default function LiveWebsites() {
       id: "pet-care-live",
       title: "Pet Care & Veterinary Platform",
       category: "Veterinary / E-Commerce",
-      hostBadge: "Cloudflare Live Tunnel",
-      hostColor: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30",
-      status: "Operational • High Availability",
+      platform: "Cloudflare Live Tunnel",
+      platformColor: "bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/40",
+      status: "Live & Connected",
       url: "https://delaware-parents-celebrity-sorts.trycloudflare.com",
       description:
-        "Full-scale live veterinary hospital and pet care platform featuring animal rescue & adoption, online pet supply store, member authentication, and live service appointment & order tracking.",
-      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=80",
+        "Full-scale veterinary portal featuring animal adoption, pet supplies shop, customer authentication, and real-time medical & appointment tracking.",
+      image: "/pet_care_ai_preview.jpg",
       icon: Heart,
-      techStack: [
-        "Cloudflare Tunnel",
-        "PHP & MySQL",
-        "Pet Shop POS",
-        "Adoption Engine",
-        "Live Tracker",
-        "JavaScript ES6"
-      ],
+      techStack: ["Cloudflare Tunnel", "PHP / MySQL", "Shop POS", "Live Tracking"],
       highlights: [
-        "🐾 Pet Adoption Portal with animal profiles & rescue records",
-        "🛍️ Pet Shop e-commerce catalog with cart & checkout",
-        "📍 Live Tracking for medical treatments & product shipping",
-        "🔐 Secure Member & Clinic Staff login authentication"
+        "Pet adoption portal & pet food e-commerce catalog",
+        "Live tracking for treatment & delivery status"
       ],
       subLinks: [
         {
           label: "Home Page",
           url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/",
           badge: "Main",
-          icon: Globe,
-          desc: "Full veterinary showcase & clinic booking"
+          icon: Globe
         },
         {
-          label: "Pet Shop (Store)",
+          label: "Pet Shop",
           url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/shop.html",
-          badge: "E-Commerce",
-          icon: ShoppingBag,
-          desc: "Food, toys, accessories & health care products"
+          badge: "Store",
+          icon: ShoppingBag
         },
         {
-          label: "Pet Adoption",
+          label: "Adoption",
           url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/adoption.html",
-          badge: "Adoption",
-          icon: Heart,
-          desc: "Rescue pet profiles & instant adoption forms"
+          badge: "Rescue",
+          icon: Heart
         },
         {
-          label: "Login Page",
+          label: "Login",
           url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/login.html",
           badge: "Auth",
-          icon: LogIn,
-          desc: "Client portal & veterinarian staff credentials"
+          icon: LogIn
         },
         {
-          label: "Live Order Tracking",
+          label: "Order Track",
           url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/track.html",
           badge: "Realtime",
-          icon: MapPin,
-          desc: "Order dispatch & medical appointment telemetry"
+          icon: MapPin
         }
       ]
     },
     {
       id: "mamun-restaurant-live",
-      title: "Mamun Restaurant & Hotel (Laravel Cloud)",
+      title: "Mamun Restaurant & Hotel",
       category: "Enterprise Hospitality Suite",
-      hostBadge: "OnRender Production Cloud",
-      hostColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30",
-      status: "Online • Production Active",
+      platform: "OnRender Production Cloud",
+      platformColor: "bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 border-indigo-500/40",
+      status: "Production Cloud",
       url: "https://mamun-restaurant.onrender.com",
       description:
-        "Full-stack production enterprise hotel & restaurant management portal with real-time suite booking, dining table reservation, food ordering POS, photo gallery, and executive admin management suite.",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "Production enterprise hotel & restaurant management portal with real-time suite bookings, dining table reservations, kitchen POS, and VIP admin suite.",
+      image: "/mamun_hotel_ai_preview.jpg",
       icon: Hotel,
-      techStack: [
-        "Laravel 10 PHP",
-        "Render Cloud",
-        "MySQL DB",
-        "Admin Suite",
-        "Blade Engine",
-        "Kitchen POS"
-      ],
+      techStack: ["Laravel 10 PHP", "MySQL DB", "Admin Dashboard", "Kitchen POS"],
       highlights: [
-        "👑 Dedicated Executive Admin Panel with financial oversight",
-        "📱 Android APK Download Hub for waitstaff & managers",
-        "🖼️ Interactive Restaurant & Hotel Photo Gallery",
-        "💻 Open-source GitHub repository with full architecture"
+        "Executive VIP admin dashboard with revenue analytics",
+        "Direct Android APK download & high-res banquet gallery"
       ],
       subLinks: [
         {
           label: "Main Website",
           url: "https://mamun-restaurant.onrender.com",
           badge: "Portal",
-          icon: Globe,
-          desc: "Room booking, table booking & dining menu"
+          icon: Globe
         },
         {
           label: "Admin Panel",
           url: "https://mamun-restaurant.onrender.com/admin",
           badge: "VIP Admin",
-          icon: ShieldCheck,
-          desc: "Sales revenue, room inventory & staff manager"
+          icon: ShieldCheck
         },
         {
-          label: "Android APK Download",
+          label: "APK Download",
           url: "https://mamun-restaurant.onrender.com/download",
-          badge: "Mobile App",
-          icon: Download,
-          desc: "One-tap direct APK download for Android phones"
+          badge: "Android App",
+          icon: Download
         },
         {
-          label: "Restaurant Gallery",
+          label: "Photo Gallery",
           url: "https://mamun-restaurant.onrender.com/gallery",
           badge: "Media",
-          icon: ImageIcon,
-          desc: "High-resolution banquet, hotel & food gallery"
+          icon: ImageIcon
         },
         {
-          label: "GitHub Source Code",
+          label: "GitHub Code",
           url: "https://github.com/tanzim557/mamun-restaurant",
-          badge: "Repository",
-          icon: Code2,
-          desc: "Full Laravel codebase & database migrations"
+          badge: "Source",
+          icon: Code2
         }
       ]
     },
     {
       id: "hotel-hisab-live",
-      title: "Hotel & Restaurant Hisab (Khata / POS)",
+      title: "Hotel & Restaurant Hisab (POS)",
       category: "Cloud Accounting & POS",
-      hostBadge: "Vercel Global Edge",
-      hostColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30",
-      status: "Ultra-Fast Edge • 99.99% Uptime",
+      platform: "Vercel Global Edge",
+      platformColor: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/40",
+      status: "Global Edge Live",
       url: "https://web-sand-psi-12.vercel.app",
       description:
-        "High-performance cloud accounting, real-time customer baki (credit) ledger, dining billing POS, and room ledger app optimized for sub-millisecond execution on Vercel's global edge network.",
-      image: "/hotel_app_open.png",
+        "High-performance cloud accounting, real-time customer baki (credit) ledger, dining billing POS, and room ledger app optimized for sub-millisecond edge execution.",
+      image: "/hotel_hisab_ai_preview.jpg",
       icon: Zap,
-      techStack: [
-        "Vercel Edge",
-        "React / Next.js",
-        "Cloud POS",
-        "Credit Ledger",
-        "Instant Sync",
-        "Mobile-Ready"
-      ],
+      techStack: ["Vercel Edge", "React / Next.js", "Cloud Khata", "POS Billing"],
       highlights: [
-        "⚡ Instant room bill generation with automatic VAT & discounts",
-        "💰 Customer Baki (credit) tracking ledger with ledger audit",
-        "🍽️ Restaurant POS order management with table selection",
-        "☁️ Automated cloud sync across multiple staff devices"
+        "Instant room bill calculation with auto VAT & receipts",
+        "Customer Baki (credit) tracking ledger with cloud sync"
       ],
       subLinks: [
         {
-          label: "Launch Live Web App",
+          label: "Open Live Web App",
           url: "https://web-sand-psi-12.vercel.app",
           badge: "Live App",
-          icon: ExternalLink,
-          desc: "Direct access to real-time Khata & POS web application"
+          icon: ExternalLink
         }
       ]
     }
   ];
 
   return (
-    <section id="live-websites" className="py-24 relative overflow-hidden bg-slate-50/70 dark:bg-[#060913]/90 transition-colors">
-      {/* Background Decorative Glow Elements */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-sky-500/10 dark:bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+    <section id="live-websites" className="py-24 relative overflow-hidden bg-slate-50 dark:bg-[#060913] transition-colors">
+      {/* Dynamic Ambient Background Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-sky-500/10 dark:bg-sky-500/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[500px] h-[300px] bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header Section */}
+        {/* Modern Section Header */}
         <div className="flex flex-col items-center text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold tracking-wider shadow-sm">
-            <span className="relative flex h-2.5 w-2.5">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold tracking-wider shadow-sm">
+            <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <Radio className="w-3.5 h-3.5" />
-            <span>PRODUCTION DEPLOYMENTS • 100% LIVE WEBSITES</span>
+            <span>CLOUD DEPLOYMENTS • 100% OPERATIONAL</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
@@ -248,218 +209,158 @@ export default function LiveWebsites() {
           </h2>
 
           <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Experience my live cloud deployments in action. Each system below is currently hosted on Cloudflare, OnRender, or Vercel with active databases, authentication, and live APIs.
+            Click any live system below to explore production databases, client portals, real-time POS billing, and live cloud APIs.
           </p>
         </div>
 
-        {/* Live Systems Grid */}
-        <div className="space-y-12">
+        {/* 3-Column Premium Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {liveSites.map((site) => {
             const SiteIcon = site.icon;
-            const isCopied = copiedUrl === site.url;
+            const isMainCopied = copiedUrl === site.url;
 
             return (
               <div
                 key={site.id}
-                className="glass-card rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800/90 shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                className="group relative flex flex-col justify-between rounded-3xl bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 hover:border-sky-500/50 dark:hover:border-sky-500/40 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                  
-                  {/* Left Column: Visual Showcase & Status (5 cols) */}
-                  <div className="lg:col-span-5 relative bg-slate-950 flex flex-col justify-between overflow-hidden min-h-[300px] lg:min-h-[460px]">
+                {/* Card Top: Browser Window Frame & AI Preview Image */}
+                <div>
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+                    {/* Simulated Browser Navigation Bar */}
+                    <div className="absolute top-0 left-0 right-0 z-20 px-3.5 py-2 bg-slate-950/80 backdrop-blur-md flex items-center justify-between border-b border-white/10">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
+                      </div>
+                      <span className="text-[10px] font-mono text-slate-400 truncate max-w-[190px]">
+                        {site.url.replace("https://", "")}
+                      </span>
+                      <div className="w-4" />
+                    </div>
+
+                    {/* AI Preview Image */}
                     <img
                       src={site.image}
                       alt={site.title}
-                      className="absolute inset-0 w-full h-full object-cover object-center opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 pt-7"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30" />
 
-                    {/* Top Floating Badges */}
-                    <div className="relative p-6 flex items-center justify-between z-10 flex-wrap gap-2">
-                      <span className={`px-3 py-1 rounded-full text-xs font-mono font-bold border backdrop-blur-md ${site.hostColor}`}>
-                        {site.hostBadge}
+                    {/* Floating Status Badges */}
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 z-10">
+                      <span className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-bold border backdrop-blur-md shadow-sm ${site.platformColor}`}>
+                        {site.platform}
                       </span>
-
-                      <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[11px] font-mono font-semibold backdrop-blur-md">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                         <span>{site.status}</span>
-                      </div>
-                    </div>
-
-                    {/* Bottom Visual Info */}
-                    <div className="relative p-6 sm:p-8 z-10 space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-xl bg-white/10 backdrop-blur-md text-white border border-white/15">
-                          <SiteIcon className="w-5 h-5" />
-                        </div>
-                        <span className="text-xs font-mono text-sky-400 font-bold uppercase tracking-wider">
-                          {site.category}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl sm:text-2xl font-black text-white leading-snug">
-                        {site.title}
-                      </h3>
-
-                      {/* Primary Action Button to Launch Main Site */}
-                      <div className="pt-2 flex items-center gap-2 flex-wrap">
-                        <a
-                          href={site.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 hover:from-sky-400 hover:to-purple-500 text-white font-extrabold text-xs shadow-lg hover:scale-[1.03] transition-transform"
-                        >
-                          <Globe className="w-4 h-4" />
-                          <span>Open Live Website</span>
-                          <ExternalLink className="w-3.5 h-3.5 ml-0.5 opacity-80" />
-                        </a>
-
-                        <button
-                          onClick={() => copyToClipboard(site.url)}
-                          className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-xs font-medium border border-white/15 backdrop-blur-md transition-colors"
-                          title="Copy Website URL"
-                        >
-                          {isCopied ? (
-                            <>
-                              <Check className="w-3.5 h-3.5 text-emerald-400" />
-                              <span className="text-emerald-300 font-semibold">Copied!</span>
-                            </>
-                          ) : (
-                            <>
-                              <Copy className="w-3.5 h-3.5 text-slate-300" />
-                              <span>Copy Link</span>
-                            </>
-                          )}
-                        </button>
-                      </div>
+                      </span>
                     </div>
                   </div>
 
-                  {/* Right Column: Key Details & Direct Page Links (7 cols) */}
-                  <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-white dark:bg-slate-900/60">
-                    
-                    {/* Top: Description & Tech Tags */}
-                    <div className="space-y-4">
-                      <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
+                  {/* Card Content */}
+                  <div className="p-6 space-y-4">
+                    {/* Category & Title */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <SiteIcon className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                        <span className="text-xs font-mono text-sky-600 dark:text-sky-400 font-bold uppercase tracking-wider">
+                          {site.category}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white leading-snug group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                        {site.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed line-clamp-3">
                         {site.description}
                       </p>
-
-                      {/* Architecture Highlights */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-                        {site.highlights.map((item, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-start gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-800 text-xs text-slate-800 dark:text-slate-200"
-                          >
-                            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                            <span className="font-medium">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Technology Badges */}
-                      <div className="flex flex-wrap gap-1.5 pt-2">
-                        {site.techStack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-300 text-[11px] font-mono border border-sky-200 dark:border-sky-800/50 font-semibold"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
                     </div>
 
-                    {/* Bottom: Direct Sub-Page / Deep Links Section */}
-                    <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800/90 space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <Sparkles className="w-3.5 h-3.5 text-sky-500" />
-                          <span>Direct Page Links &amp; Portals ({site.subLinks.length}):</span>
+                    {/* Tech Badges */}
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {site.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-mono border border-slate-200 dark:border-slate-700/80 font-medium"
+                        >
+                          {tech}
                         </span>
-                        <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-                          Click to open directly ↗
+                      ))}
+                    </div>
+
+                    {/* Direct Sub-Page Portals (Compact, Crisp, Clickable) */}
+                    <div className="pt-2">
+                      <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800/80">
+                        <span className="text-[11px] font-mono font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+                          <Sparkles className="w-3 h-3 text-sky-500" />
+                          <span>Direct Pages ({site.subLinks.length}):</span>
+                        </span>
+                        <span className="text-[10px] font-mono text-slate-600 dark:text-slate-400">
+                          Direct links ↗
                         </span>
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      <div className="flex flex-wrap gap-1.5 pt-2.5">
                         {site.subLinks.map((sub, sIdx) => {
                           const SubIcon = sub.icon;
                           const isSubCopied = copiedUrl === sub.url;
 
                           return (
-                            <div
+                            <a
                               key={sIdx}
-                              className="group/link flex items-center justify-between p-3 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/60 hover:border-sky-300 dark:hover:border-sky-500/50 transition-all duration-200 shadow-sm"
+                              href={sub.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="group/pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-sky-50 dark:hover:bg-sky-500/20 text-slate-800 dark:text-slate-200 hover:text-sky-600 dark:hover:text-sky-300 border border-slate-200 dark:border-slate-700/80 hover:border-sky-300 dark:hover:border-sky-500/40 text-xs font-semibold transition-all"
+                              title={`Open ${sub.label}`}
                             >
-                              <a
-                                href={sub.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center gap-3 flex-1 min-w-0"
-                              >
-                                <div className="p-2 rounded-xl bg-white dark:bg-slate-900 text-sky-600 dark:text-sky-400 border border-slate-200 dark:border-slate-700 group-hover/link:bg-sky-600 group-hover/link:text-white transition-colors shrink-0">
-                                  <SubIcon className="w-4 h-4" />
-                                </div>
-                                <div className="min-w-0 flex-1">
-                                  <div className="flex items-center gap-1.5">
-                                    <span className="text-xs font-bold text-slate-900 dark:text-white truncate group-hover/link:text-sky-600 dark:group-hover/link:text-sky-400">
-                                      {sub.label}
-                                    </span>
-                                    {sub.badge && (
-                                      <span className="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 shrink-0">
-                                        {sub.badge}
-                                      </span>
-                                    )}
-                                  </div>
-                                  {sub.desc && (
-                                    <p className="text-[10px] text-slate-500 dark:text-slate-400 truncate">
-                                      {sub.desc}
-                                    </p>
-                                  )}
-                                </div>
-                              </a>
-
-                              <div className="flex items-center gap-1 pl-2 shrink-0">
-                                <button
-                                  onClick={() => copyToClipboard(sub.url)}
-                                  className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-                                  title="Copy direct URL"
-                                >
-                                  {isSubCopied ? (
-                                    <Check className="w-3.5 h-3.5 text-emerald-500" />
-                                  ) : (
-                                    <Copy className="w-3.5 h-3.5" />
-                                  )}
-                                </button>
-                                <a
-                                  href={sub.url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="p-1.5 text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-                                  title="Open in new tab"
-                                >
-                                  <ExternalLink className="w-3.5 h-3.5" />
-                                </a>
-                              </div>
-                            </div>
+                              <SubIcon className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400 group-hover/pill:scale-110 transition-transform" />
+                              <span>{sub.label}</span>
+                              <ArrowUpRight className="w-3 h-3 opacity-60 group-hover/pill:opacity-100" />
+                            </a>
                           );
                         })}
                       </div>
                     </div>
-
                   </div>
-
                 </div>
+
+                {/* Card Footer Actions */}
+                <div className="p-6 pt-0 border-t border-slate-100 dark:border-slate-800/80 mt-4 flex items-center gap-2">
+                  <a
+                    href={site.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600 hover:from-sky-500 hover:to-indigo-500 text-white font-extrabold text-xs shadow-md hover:scale-[1.02] transition-all"
+                  >
+                    <Globe className="w-4 h-4" />
+                    <span>Open Live Website</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                  </a>
+
+                  <button
+                    onClick={() => copyToClipboard(site.url)}
+                    className="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition-colors shrink-0"
+                    title="Copy Main URL"
+                  >
+                    {isMainCopied ? (
+                      <Check className="w-4 h-4 text-emerald-500" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
+
               </div>
             );
           })}
         </div>
 
         {/* Bottom Fast Verification Callout */}
-        <div className="mt-14 p-6 rounded-3xl bg-gradient-to-r from-sky-500/10 via-indigo-500/10 to-purple-500/10 border border-sky-500/20 text-center max-w-3xl mx-auto space-y-2">
+        <div className="mt-14 p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-sky-500/10 via-indigo-500/10 to-purple-500/10 border border-sky-500/20 text-center max-w-2xl mx-auto space-y-1">
           <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
-            💡 <span className="font-bold text-sky-600 dark:text-sky-400">Recruiter &amp; Evaluator Notice:</span> All credentials, databases, and microservices for these sites are running actively in production. You can test customer logins, make live orders, or inspect API responses directly.
+            ⚡ <span className="font-bold text-sky-600 dark:text-sky-400">Production Verified:</span> All databases, cloud tunnels, and microservices for these sites are running 24/7. You can test live room check-ins, place food orders, or audit ledger transactions.
           </p>
         </div>
 
