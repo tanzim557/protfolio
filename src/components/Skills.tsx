@@ -54,19 +54,19 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 relative bg-slate-950/60 border-t border-slate-900">
+    <section id="skills" className="py-20 relative bg-slate-50/70 dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono font-semibold mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-600 dark:text-sky-400 text-xs font-mono font-semibold mb-3">
             <Cpu className="w-3.5 h-3.5" />
             <span>TECHNICAL PROFICIENCY</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
             Full-Stack &amp; IoT <span className="gradient-text">Skill Ecosystem</span>
           </h2>
-          <p className="text-slate-400 text-sm max-w-2xl mt-2">
+          <p className="text-slate-600 dark:text-slate-400 text-sm max-w-2xl mt-2">
             Comprehensive web, backend, and hardware technologies Mubassher leverages to build production-grade systems.
           </p>
         </div>
@@ -76,31 +76,31 @@ export default function Skills() {
           {categories.map((cat, idx) => {
             const Icon = cat.icon;
             return (
-              <div key={idx} className="glass-panel rounded-3xl p-6 sm:p-8 border-slate-800 space-y-6">
+              <div key={idx} className="glass-panel rounded-3xl p-6 sm:p-8 space-y-6 bg-white dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 shadow-md">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                  <div className="p-3 rounded-2xl bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">{cat.title}</h3>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">{cat.title}</h3>
                 </div>
 
                 <div className="space-y-4">
                   {cat.skills.map((skill) => (
                     <div key={skill.name} className="space-y-1.5">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="font-semibold text-slate-200">{skill.name}</span>
-                        <span className="font-mono text-sky-400 font-bold">{skill.level}%</span>
+                        <span className="font-bold text-slate-900 dark:text-slate-200">{skill.name}</span>
+                        <span className="font-mono text-sky-600 dark:text-sky-400 font-bold">{skill.level}%</span>
                       </div>
 
                       {/* Progress Bar Container */}
-                      <div className="w-full h-2 rounded-full bg-slate-900 overflow-hidden border border-slate-800 p-[1px]">
+                      <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-900 overflow-hidden border border-slate-200 dark:border-slate-800 p-[1px]">
                         <div
-                          className="h-full rounded-full bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-500 transition-all duration-1000"
+                          className="h-full rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 transition-all duration-1000"
                           style={{ width: `${skill.level}%` }}
                         />
                       </div>
 
-                      <p className="text-[11px] text-slate-400 font-mono">{skill.note}</p>
+                      <p className="text-[11px] text-slate-600 dark:text-slate-400 font-mono">{skill.note}</p>
                     </div>
                   ))}
                 </div>

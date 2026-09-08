@@ -329,26 +329,26 @@ export default function Projects() {
     filter === "all" ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="py-20 relative bg-slate-950/40">
+    <section id="projects" className="py-20 relative bg-slate-50/50 dark:bg-slate-950/40 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
         <div className="flex flex-col items-center text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono font-semibold mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-600 dark:text-sky-400 text-xs font-mono font-semibold mb-3">
             <Code className="w-3.5 h-3.5" />
             <span>REAL LAPTOP CODEBASES &amp; DOCUMENTATION</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
             Projects &amp; <span className="gradient-text">Setup Documentation</span>
           </h2>
-          <p className="text-slate-400 text-sm max-w-2xl mt-2">
+          <p className="text-slate-600 dark:text-slate-400 text-sm max-w-2xl mt-2">
             Click any project to view complete README documentation, stack architecture, and exact step-by-step setup commands to run it locally.
           </p>
         </div>
 
         {/* Filter Navigation Tabs */}
         <div className="flex justify-center mb-10 overflow-x-auto pb-2">
-          <div className="flex p-1 rounded-2xl bg-slate-900 border border-slate-800">
+          <div className="flex p-1 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
             {[
               { id: "all", label: "All Projects (8)" },
               { id: "iot", label: "IoT & Hardware" },
@@ -363,7 +363,7 @@ export default function Projects() {
                 className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                   filter === tab.id
                     ? "bg-sky-500 text-white shadow-lg"
-                    : "text-slate-400 hover:text-white"
+                    : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 }`}
               >
                 {tab.label}
@@ -377,7 +377,7 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="glass-card rounded-3xl overflow-hidden border border-slate-800 flex flex-col justify-between group"
+              className="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group shadow-lg bg-white dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800"
             >
               {/* Project Image Header */}
               <div className="relative h-56 w-full overflow-hidden bg-slate-900">
@@ -402,17 +402,17 @@ export default function Projects() {
               {/* Card Body */}
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <h3 className="text-lg font-bold text-white group-hover:text-sky-300 transition-colors leading-snug">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                  <p className="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Architecture Note */}
-                <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-400">
-                  <span className="text-sky-400 font-bold block mb-0.5">Stack Architecture:</span>
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-700 dark:text-slate-300">
+                  <span className="text-sky-600 dark:text-sky-400 font-bold block mb-0.5">Stack Architecture:</span>
                   {project.architecture}
                 </div>
 
@@ -421,7 +421,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-md bg-slate-800/60 text-slate-300 text-[11px] font-mono border border-slate-700/50"
+                      className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800/60 text-slate-800 dark:text-slate-300 text-[11px] font-mono border border-slate-200 dark:border-slate-700/50 font-medium"
                     >
                       {tag}
                     </span>
@@ -429,20 +429,20 @@ export default function Projects() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center gap-3 pt-3 border-t border-slate-800/80">
+                <div className="flex items-center gap-3 pt-3 border-t border-slate-200 dark:border-slate-800/80">
                   <button
                     onClick={() => setActiveProject(project)}
-                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 text-white font-extrabold text-xs shadow-md hover:scale-[1.02] transition-transform"
+                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600 text-white font-extrabold text-xs shadow-md hover:scale-[1.02] transition-transform"
                   >
-                    <BookOpen className="w-4 h-4" />
-                    <span>View README &amp; Setup Guide</span>
+                    <BookOpen className="w-4 h-4 text-white" />
+                    <span className="text-white">View README &amp; Setup Guide</span>
                   </button>
 
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition-colors"
+                    className="p-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-300 dark:border-slate-800 transition-colors"
                     title="View GitHub Repository"
                   >
                     <GithubIcon className="w-4 h-4" />
@@ -456,30 +456,30 @@ export default function Projects() {
 
         {/* Complete Project README & How-To-Run Guide Modal */}
         {activeProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md overflow-y-auto">
-            <div className="relative w-full max-w-3xl glass-panel rounded-3xl border border-sky-500/40 p-6 sm:p-8 space-y-6 shadow-2xl animate-in zoom-in-95 my-8 max-h-[90vh] overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
+            <div className="relative w-full max-w-3xl glass-panel rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl animate-in zoom-in-95 my-8 max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
               
               <button
                 onClick={() => setActiveProject(null)}
-                className="absolute top-5 right-5 p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800"
+                className="absolute top-5 right-5 p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
               >
                 <X className="w-6 h-6" />
               </button>
 
-              <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
-                <div className="p-3 rounded-2xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              <div className="flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+                <div className="p-3 rounded-2xl bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
                   <BookOpen className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-400 text-[10px] font-mono font-bold uppercase">
+                    <span className="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-600 dark:text-sky-400 text-[10px] font-mono font-bold uppercase">
                       README.md
                     </span>
-                    <span className="text-xs text-emerald-400 font-mono font-semibold">
+                    <span className="text-xs text-emerald-600 dark:text-emerald-400 font-mono font-semibold">
                       {activeProject.metrics}
                     </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-1">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-1">
                     {activeProject.title}
                   </h3>
                 </div>
@@ -487,23 +487,23 @@ export default function Projects() {
 
               {/* Project Overview */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono text-sky-400 uppercase tracking-wider font-bold">
+                <h4 className="text-xs font-mono text-sky-600 dark:text-sky-400 uppercase tracking-wider font-bold">
                   1. PROJECT OVERVIEW:
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
+                <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-950/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
                   {activeProject.readme.overview}
                 </p>
               </div>
 
               {/* System / Hardware Requirements */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono text-sky-400 uppercase tracking-wider font-bold">
+                <h4 className="text-xs font-mono text-sky-600 dark:text-sky-400 uppercase tracking-wider font-bold">
                   2. SYSTEM &amp; PREREQUISITE REQUIREMENTS:
                 </h4>
-                <div className="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-1.5">
+                <div className="bg-slate-50 dark:bg-slate-950/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-1.5">
                   {activeProject.readme.requirements.map((req, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-200">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-800 dark:text-slate-200">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                       <span>{req}</span>
                     </div>
                   ))}
@@ -512,8 +512,8 @@ export default function Projects() {
 
               {/* Step-by-Step How To Run Commands */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono text-sky-400 uppercase tracking-wider font-bold flex items-center gap-2">
-                  <TerminalIcon className="w-4 h-4 text-sky-400" />
+                <h4 className="text-xs font-mono text-sky-600 dark:text-sky-400 uppercase tracking-wider font-bold flex items-center gap-2">
+                  <TerminalIcon className="w-4 h-4 text-sky-500" />
                   <span>3. HOW TO RUN &amp; EXECUTE PROJECT (COMMANDS):</span>
                 </h4>
                 <div className="bg-slate-950 rounded-2xl p-4 font-mono text-xs border border-slate-800 space-y-2">
@@ -533,7 +533,7 @@ export default function Projects() {
 
               {/* JSON Live Output / Diagnostics */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono text-sky-400 uppercase tracking-wider font-bold">
+                <h4 className="text-xs font-mono text-sky-600 dark:text-sky-400 uppercase tracking-wider font-bold">
                   4. DIAGNOSTIC OUTPUT / JSON RESPONSE:
                 </h4>
                 <pre className="p-4 rounded-2xl bg-slate-950 text-sky-300 text-xs font-mono border border-slate-800 overflow-x-auto">
@@ -542,10 +542,10 @@ export default function Projects() {
               </div>
 
               {/* Footer Modal Actions */}
-              <div className="flex justify-between items-center pt-4 border-t border-slate-800">
+              <div className="flex justify-between items-center pt-4 border-t border-slate-200 dark:border-slate-800">
                 <button
                   onClick={() => setActiveProject(null)}
-                  className="px-5 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white font-semibold"
+                  className="px-5 py-2.5 rounded-xl text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold"
                 >
                   Close Documentation
                 </button>
@@ -556,8 +556,8 @@ export default function Projects() {
                   rel="noreferrer"
                   className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 text-white font-bold text-xs shadow-lg hover:scale-105 transition-transform"
                 >
-                  <GithubIcon className="w-4 h-4" />
-                  <span>Open GitHub Code Repository</span>
+                  <GithubIcon className="w-4 h-4 text-white" />
+                  <span className="text-white">Open GitHub Code Repository</span>
                 </a>
               </div>
 

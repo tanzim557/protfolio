@@ -8,12 +8,15 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#090d16] text-slate-100 relative selection:bg-sky-500 selection:text-white">
-      {/* Sticky Header */}
-      <Navbar />
+    <>
+      <LoadingScreen />
+      <main className="min-h-screen bg-slate-50 dark:bg-[#060913] text-slate-900 dark:text-slate-100 relative selection:bg-sky-500 selection:text-white transition-colors duration-300">
+        {/* Sticky Header */}
+        <Navbar />
 
       {/* Hero Section */}
       <Hero />
@@ -36,5 +39,6 @@ export default function Home() {
       {/* Footer */}
       <Footer />
     </main>
+    </>
   );
 }
