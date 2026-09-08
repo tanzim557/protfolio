@@ -61,15 +61,15 @@ export default function LiveWebsites() {
       id: "pet-care-live",
       title: "Pet Care & Veterinary Platform",
       category: "Veterinary / E-Commerce",
-      platform: "Cloudflare Live Tunnel",
-      platformColor: "bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/40",
-      status: "Live & Connected",
-      url: "https://delaware-parents-celebrity-sorts.trycloudflare.com",
+      platform: "Railway Production Cloud",
+      platformColor: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/40",
+      status: "Production Live",
+      url: "https://pets-care-web-production.up.railway.app",
       description:
         "Full-scale veterinary portal featuring animal adoption, pet supplies shop, customer authentication, and real-time medical & appointment tracking.",
       image: "/pet_care_ai_preview.jpg",
       icon: Heart,
-      techStack: ["Cloudflare Tunnel", "PHP / MySQL", "Shop POS", "Live Tracking"],
+      techStack: ["Railway Cloud", "PHP / MySQL", "Shop POS", "Live Tracking"],
       highlights: [
         "Pet adoption portal & pet food e-commerce catalog",
         "Live tracking for treatment & delivery status"
@@ -77,31 +77,31 @@ export default function LiveWebsites() {
       subLinks: [
         {
           label: "Home Page",
-          url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/",
+          url: "https://pets-care-web-production.up.railway.app/",
           badge: "Main",
           icon: Globe
         },
         {
           label: "Pet Shop",
-          url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/shop.html",
+          url: "https://pets-care-web-production.up.railway.app/shop.html",
           badge: "Store",
           icon: ShoppingBag
         },
         {
           label: "Adoption",
-          url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/adoption.html",
+          url: "https://pets-care-web-production.up.railway.app/adoption.html",
           badge: "Rescue",
           icon: Heart
         },
         {
           label: "Login",
-          url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/login.html",
+          url: "https://pets-care-web-production.up.railway.app/login.html",
           badge: "Auth",
           icon: LogIn
         },
         {
           label: "Order Track",
-          url: "https://delaware-parents-celebrity-sorts.trycloudflare.com/track.html",
+          url: "https://pets-care-web-production.up.railway.app/track.html",
           badge: "Realtime",
           icon: MapPin
         }

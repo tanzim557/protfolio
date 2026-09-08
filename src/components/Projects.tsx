@@ -202,7 +202,7 @@ export default function Projects() {
       image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80",
       tags: ["PHP", "JavaScript", "MySQL", "SQL Database", "Bootstrap"],
       metrics: "100% Relational DB Integrity • Multi-Clinic Ready",
-      demoUrl: "https://delaware-parents-celebrity-sorts.trycloudflare.com",
+      demoUrl: "https://pets-care-web-production.up.railway.app",
       githubUrl: "https://github.com/mubassher",
       features: [
         "Complete pet medical history, vaccination timeline, and prescriptions log.",
