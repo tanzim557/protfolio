@@ -1,20 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { Code, BookOpen, Play, X, CheckCircle2, Terminal as TerminalIcon, Sparkles } from "lucide-react";
+import { Code, BookOpen, X, CheckCircle2, Terminal as TerminalIcon, Smartphone, Download } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 
 interface Project {
   id: string;
   title: string;
-  category: "fullstack" | "cloud" | "ai" | "frontend" | "iot";
+  category: "fullstack" | "cloud" | "ai" | "frontend" | "iot" | "mobile";
   description: string;
   architecture: string;
   image: string;
+  screenshots?: string[];
   tags: string[];
   metrics: string;
   demoUrl: string;
   githubUrl: string;
+  apkUrl?: string;
   features: string[];
   readme: {
     overview: string;
@@ -26,11 +28,55 @@ interface Project {
 }
 
 export default function Projects() {
-  const [filter, setFilter] = useState<"all" | "fullstack" | "cloud" | "ai" | "frontend" | "iot">("all");
+  const [filter, setFilter] = useState<"all" | "fullstack" | "cloud" | "ai" | "frontend" | "iot" | "mobile">("all");
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [activeScreenshot, setActiveScreenshot] = useState<number>(0);
 
-  // All Laptop Projects of Mubassher Alam Tanzim with full README & How to Run Guides
+  // All Projects of Mubassher Alam Tanzim with full README & How to Run Guides
   const projects: Project[] = [
+    {
+      id: "hotel-hisab-android",
+      title: "Hotel Hisab — Android Hotel Management App",
+      category: "mobile",
+      description: "A fully offline-capable Android hotel & restaurant management app featuring real-time room booking, food POS, baki (credit) tracking, cloud sync, and downloadable APK — built with React Native & Capacitor.",
+      architecture: "React Native + Capacitor + Node.js REST API + JSON Cloud DB + Android APK",
+      image: "/hotel_hisab_banner.jpg",
+      screenshots: ["/hotel_hisab_banner.jpg", "/hotel_hisab_mockup.jpg"],
+      tags: ["React Native", "Capacitor", "Android APK", "Node.js", "JSON DB", "Offline-First"],
+      metrics: "Offline-First • Live Cloud Sync • APK Ready",
+      demoUrl: "https://github.com/tanzim557/mamun-hotel-restaurant/releases",
+      githubUrl: "https://github.com/tanzim557/mamun-hotel-restaurant",
+      apkUrl: "https://github.com/tanzim557/mamun-hotel-restaurant/raw/master/hotel_hisab.apk",
+      features: [
+        "📱 Installable Android APK — works fully offline without internet.",
+        "💰 Baki (credit) tracking system — logs customer dues with auto-calculation.",
+        "🍽️ Food POS — order management with table-wise billing and daily summary.",
+        "☁️ Real-time cloud sync — all transactions backed up to server database.",
+        "🔐 Server Admin panel — owner-only VIP dashboard with session persistence.",
+      ],
+      readme: {
+        overview: "Hotel Hisab is a production-ready Android app built for real hotel operations. It runs fully offline as an APK and syncs all transactions to a Node.js cloud server. Features include room booking, food ordering POS, baki (credit ledger) management, and a secure server admin panel.",
+        techStack: "React Native (JSX), Capacitor (Android Bridge), Vite Build System, Node.js + Express REST API, JSON File Database, Android APK (Signed)",
+        requirements: [
+          "Android phone (Android 8.0+) to install the APK.",
+          "Node.js 18+ to run the backend server.",
+          "Allow 'Install from unknown sources' on Android for APK install.",
+        ],
+        howToRun: [
+          "# ── OPTION 1: Direct APK Install (Easiest) ──",
+          "# Download hotel_hisab.apk from GitHub Releases",
+          "# Transfer to Android phone & tap to install",
+          "# Allow unknown sources → App opens immediately",
+          "",
+          "# ── OPTION 2: Run Server + Web Dev ──",
+          "git clone https://github.com/tanzim557/mamun-hotel-restaurant.git",
+          "cd mamun-hotel-restaurant",
+          "node server/server.js          # Start Node.js backend on :3001",
+          "cd web && npm install && npm run dev   # Start web UI on :5173",
+        ],
+        sampleOutput: "{\n  \"app\": \"Hotel Hisab v2.0\",\n  \"platform\": \"Android APK (Capacitor)\",\n  \"rooms_active\": 12,\n  \"baki_total\": \"৳ 14,200\",\n  \"cloud_sync\": \"LIVE\",\n  \"admin\": \"Tanzim (Owner Session Active)\"\n}",
+      },
+    },
     {
       id: "esp32-iot-water-monitor",
       title: "ESP32 IoT Water Level Monitor & Firebase Live Dashboard",
@@ -350,19 +396,22 @@ export default function Projects() {
         <div className="flex justify-center mb-10 overflow-x-auto pb-2">
           <div className="flex p-1 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
             {[
-              { id: "all", label: "All Projects (8)" },
-              { id: "iot", label: "IoT & Hardware" },
-              { id: "fullstack", label: "Hotel & Web Apps" },
-              { id: "ai", label: "AI & TeleMedicine" },
-              { id: "cloud", label: "Physics & Compilers" },
-              { id: "frontend", label: "3D Simulators & Games" },
+              { id: "all", label: "All Projects (9)", icon: null },
+              { id: "mobile", label: "📱 Android Apps", icon: null },
+              { id: "iot", label: "IoT & Hardware", icon: null },
+              { id: "fullstack", label: "Hotel & Web Apps", icon: null },
+              { id: "ai", label: "AI & TeleMedicine", icon: null },
+              { id: "cloud", label: "Physics & Compilers", icon: null },
+              { id: "frontend", label: "3D Simulators & Games", icon: null },
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id as any)}
                 className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                   filter === tab.id
-                    ? "bg-sky-500 text-white shadow-lg"
+                    ? tab.id === "mobile"
+                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg"
+                      : "bg-sky-500 text-white shadow-lg"
                     : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 }`}
               >
@@ -377,7 +426,11 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group shadow-lg bg-white dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800"
+              className={`glass-card rounded-3xl overflow-hidden flex flex-col justify-between group shadow-lg border ${
+                project.category === "mobile"
+                  ? "bg-gradient-to-b from-emerald-950/30 to-slate-900/90 border-emerald-700/40 dark:border-emerald-700/40"
+                  : "bg-white dark:bg-slate-900/80 border-slate-200/90 dark:border-slate-800"
+              }`}
             >
               {/* Project Image Header */}
               <div className="relative h-56 w-full overflow-hidden bg-slate-900">
@@ -387,14 +440,27 @@ export default function Projects() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                
+
+                {/* Mobile App Special Badge */}
+                {project.category === "mobile" && (
+                  <div className="absolute top-0 left-0 right-0 flex items-center justify-center pt-3 z-10">
+                    <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-[10px] font-bold tracking-wider flex items-center gap-1 shadow-lg">
+                      <Smartphone className="w-3 h-3" /> ANDROID APP • APK DOWNLOAD AVAILABLE
+                    </span>
+                  </div>
+                )}
+
                 {/* Category Badge */}
-                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-900/90 text-sky-400 text-[10px] font-mono font-bold border border-slate-700 uppercase tracking-wider">
-                  {project.category}
+                <span className={`absolute bottom-4 left-4 px-3 py-1 rounded-full text-[10px] font-mono font-bold border uppercase tracking-wider ${
+                  project.category === "mobile"
+                    ? "bg-emerald-900/90 text-emerald-300 border-emerald-700"
+                    : "bg-slate-900/90 text-sky-400 border-slate-700"
+                }`}>
+                  {project.category === "mobile" ? "📱 Mobile App" : project.category}
                 </span>
 
                 {/* Performance Badge */}
-                <span className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-emerald-950/90 text-emerald-400 text-[10px] font-mono font-semibold border border-emerald-700/50">
+                <span className="absolute bottom-4 right-4 px-2.5 py-1 rounded-full bg-emerald-950/90 text-emerald-400 text-[10px] font-mono font-semibold border border-emerald-700/50">
                   {project.metrics}
                 </span>
               </div>
@@ -429,14 +495,28 @@ export default function Projects() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center gap-3 pt-3 border-t border-slate-200 dark:border-slate-800/80">
+                <div className="flex items-center gap-2 pt-3 border-t border-slate-200 dark:border-slate-800/80">
                   <button
-                    onClick={() => setActiveProject(project)}
+                    onClick={() => { setActiveProject(project); setActiveScreenshot(0); }}
                     className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600 text-white font-extrabold text-xs shadow-md hover:scale-[1.02] transition-transform"
                   >
                     <BookOpen className="w-4 h-4 text-white" />
-                    <span className="text-white">View README &amp; Setup Guide</span>
+                    <span className="text-white">View README</span>
                   </button>
+
+                  {/* APK Download Button for Mobile Projects */}
+                  {project.apkUrl && (
+                    <a
+                      href={project.apkUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 px-3 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs shadow-md hover:scale-[1.02] transition-transform"
+                      title="Download Android APK"
+                    >
+                      <Download className="w-4 h-4" />
+                      <span>APK</span>
+                    </a>
+                  )}
 
                   <a
                     href={project.githubUrl}
@@ -457,7 +537,11 @@ export default function Projects() {
         {/* Complete Project README & How-To-Run Guide Modal */}
         {activeProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
-            <div className="relative w-full max-w-3xl glass-panel rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl animate-in zoom-in-95 my-8 max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+            <div className={`relative w-full max-w-3xl glass-panel rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl animate-in zoom-in-95 my-8 max-h-[90vh] overflow-y-auto border ${
+              activeProject.category === "mobile"
+                ? "bg-gradient-to-b from-slate-900 to-emerald-950/20 border-emerald-700/40"
+                : "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800"
+            }`}>
               
               <button
                 onClick={() => setActiveProject(null)}
@@ -466,14 +550,23 @@ export default function Projects() {
                 <X className="w-6 h-6" />
               </button>
 
+              {/* Modal Header */}
               <div className="flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
-                <div className="p-3 rounded-2xl bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
-                  <BookOpen className="w-6 h-6" />
+                <div className={`p-3 rounded-2xl border ${
+                  activeProject.category === "mobile"
+                    ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                    : "bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20"
+                }`}>
+                  {activeProject.category === "mobile" ? <Smartphone className="w-6 h-6" /> : <BookOpen className="w-6 h-6" />}
                 </div>
                 <div>
-                  <div className="flex items-center gap-2">
-                    <span className="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-600 dark:text-sky-400 text-[10px] font-mono font-bold uppercase">
-                      README.md
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase ${
+                      activeProject.category === "mobile"
+                        ? "bg-emerald-500/20 text-emerald-400"
+                        : "bg-sky-500/20 text-sky-600 dark:text-sky-400"
+                    }`}>
+                      {activeProject.category === "mobile" ? "📱 ANDROID APK" : "README.md"}
                     </span>
                     <span className="text-xs text-emerald-600 dark:text-emerald-400 font-mono font-semibold">
                       {activeProject.metrics}
@@ -484,6 +577,44 @@ export default function Projects() {
                   </h3>
                 </div>
               </div>
+
+              {/* MOBILE: Screenshot Gallery */}
+              {activeProject.category === "mobile" && activeProject.screenshots && (
+                <div className="space-y-3">
+                  <h4 className="text-xs font-mono text-emerald-400 uppercase tracking-wider font-bold flex items-center gap-2">
+                    <Smartphone className="w-4 h-4" />
+                    <span>APP SCREENSHOTS:</span>
+                  </h4>
+                  <div className="relative rounded-2xl overflow-hidden border border-emerald-700/30 bg-slate-950 h-64">
+                    <img
+                      src={activeProject.screenshots[activeScreenshot]}
+                      alt={`Screenshot ${activeScreenshot + 1}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="flex gap-2 justify-center">
+                    {activeProject.screenshots.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveScreenshot(idx)}
+                        className={`w-2.5 h-2.5 rounded-full transition-all ${
+                          activeScreenshot === idx ? "bg-emerald-400 scale-125" : "bg-slate-600 hover:bg-slate-400"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  {/* APK Download Banner */}
+                  <a
+                    href={activeProject.apkUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-extrabold text-sm shadow-xl hover:scale-[1.01] transition-transform"
+                  >
+                    <Download className="w-5 h-5" />
+                    <span>⬇️ Download hotel_hisab.apk — Install on Android</span>
+                  </a>
+                </div>
+              )}
 
               {/* Project Overview */}
               <div className="space-y-2">
@@ -523,7 +654,7 @@ export default function Projects() {
                   </div>
                   <div className="space-y-1 text-sky-300">
                     {activeProject.readme.howToRun.map((cmd, idx) => (
-                      <div key={idx} className={cmd.startsWith("#") ? "text-slate-500 italic pt-1" : "text-emerald-400 font-bold"}>
+                      <div key={idx} className={cmd.startsWith("#") ? "text-slate-500 italic pt-1" : cmd === "" ? "py-0.5" : "text-emerald-400 font-bold"}>
                         {cmd}
                       </div>
                     ))}
@@ -542,7 +673,7 @@ export default function Projects() {
               </div>
 
               {/* Footer Modal Actions */}
-              <div className="flex justify-between items-center pt-4 border-t border-slate-200 dark:border-slate-800">
+              <div className="flex justify-between items-center pt-4 border-t border-slate-200 dark:border-slate-800 flex-wrap gap-3">
                 <button
                   onClick={() => setActiveProject(null)}
                   className="px-5 py-2.5 rounded-xl text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold"
@@ -550,15 +681,28 @@ export default function Projects() {
                   Close Documentation
                 </button>
 
-                <a
-                  href={activeProject.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 text-white font-bold text-xs shadow-lg hover:scale-105 transition-transform"
-                >
-                  <GithubIcon className="w-4 h-4 text-white" />
-                  <span className="text-white">Open GitHub Code Repository</span>
-                </a>
+                <div className="flex gap-2">
+                  {activeProject.apkUrl && (
+                    <a
+                      href={activeProject.apkUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xs shadow-lg hover:scale-105 transition-transform"
+                    >
+                      <Download className="w-4 h-4" />
+                      <span>Download APK</span>
+                    </a>
+                  )}
+                  <a
+                    href={activeProject.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 text-white font-bold text-xs shadow-lg hover:scale-105 transition-transform"
+                  >
+                    <GithubIcon className="w-4 h-4 text-white" />
+                    <span className="text-white">GitHub Repo</span>
+                  </a>
+                </div>
               </div>
 
             </div>
