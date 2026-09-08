@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import LiveWebsites from "@/components/LiveWebsites";
 import About from "@/components/About";
 import Education from "@/components/Education";
 import Projects from "@/components/Projects";
@@ -20,6 +21,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero />
+
+      {/* Live Running Websites Showcase */}
+      <LiveWebsites />
 
       {/* About Myself Section */}
       <About />

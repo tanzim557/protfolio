@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Code, BookOpen, X, CheckCircle2, Terminal as TerminalIcon, Smartphone, Download } from "lucide-react";
+import { Code, BookOpen, X, CheckCircle2, Terminal as TerminalIcon, Smartphone, Download, Globe, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 
 interface Project {
@@ -44,7 +44,7 @@ export default function Projects() {
       screenshots: ["/hotel_hisab_banner.jpg", "/hotel_hisab_mockup.jpg"],
       tags: ["React Native", "Capacitor", "Android APK", "Node.js", "JSON DB", "Offline-First"],
       metrics: "Offline-First • Live Cloud Sync • APK Ready",
-      demoUrl: "https://github.com/tanzim557/mamun-hotel-restaurant/releases",
+      demoUrl: "https://web-sand-psi-12.vercel.app",
       githubUrl: "https://github.com/tanzim557/mamun-hotel-restaurant",
       apkUrl: "https://github.com/tanzim557/mamun-hotel-restaurant/raw/master/hotel_hisab.apk",
       features: [
@@ -123,8 +123,8 @@ export default function Projects() {
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
       tags: ["Laravel PHP", "MySQL", "Blade", "Hotel Booking", "Bootstrap"],
       metrics: "100% Booking Efficiency • Automated Billing",
-      demoUrl: "https://github.com/mubassher",
-      githubUrl: "https://github.com/mubassher",
+      demoUrl: "https://mamun-restaurant.onrender.com",
+      githubUrl: "https://github.com/tanzim557/mamun-restaurant",
       features: [
         "Room reservation & restaurant dining table booking with real-time room availability status.",
         "Food order POS system with automated tax & invoice billing generation.",
@@ -202,7 +202,7 @@ export default function Projects() {
       image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80",
       tags: ["PHP", "JavaScript", "MySQL", "SQL Database", "Bootstrap"],
       metrics: "100% Relational DB Integrity • Multi-Clinic Ready",
-      demoUrl: "https://github.com/mubassher",
+      demoUrl: "https://delaware-parents-celebrity-sorts.trycloudflare.com",
       githubUrl: "https://github.com/mubassher",
       features: [
         "Complete pet medical history, vaccination timeline, and prescriptions log.",
@@ -504,6 +504,20 @@ export default function Projects() {
                     <span className="text-white">View README</span>
                   </button>
 
+                  {/* Live Web Demo Button if available */}
+                  {project.demoUrl && !project.demoUrl.includes("github.com") && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 px-3 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs shadow-md hover:scale-[1.02] transition-transform"
+                      title="Open Live Website"
+                    >
+                      <Globe className="w-4 h-4" />
+                      <span>Live</span>
+                    </a>
+                  )}
+
                   {/* APK Download Button for Mobile Projects */}
                   {project.apkUrl && (
                     <a
@@ -681,7 +695,19 @@ export default function Projects() {
                   Close Documentation
                 </button>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
+                  {activeProject.demoUrl && !activeProject.demoUrl.includes("github.com") && (
+                    <a
+                      href={activeProject.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xs shadow-lg hover:scale-105 transition-transform"
+                    >
+                      <Globe className="w-4 h-4" />
+                      <span>Open Live Website</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                   {activeProject.apkUrl && (
                     <a
                       href={activeProject.apkUrl}

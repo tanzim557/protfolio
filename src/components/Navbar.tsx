@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Code, User, Cpu, Mail, Menu, X, GraduationCap, FileText } from "lucide-react";
+import { Code, User, Cpu, Mail, Menu, X, GraduationCap, FileText, Globe } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
@@ -17,11 +17,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about", icon: User },
-    { name: "Education", href: "#education", icon: GraduationCap },
-    { name: "Projects", href: "#projects", icon: Code },
-    { name: "Skills", href: "#skills", icon: Cpu },
-    { name: "Contact", href: "#contact", icon: Mail },
+    { name: "About", href: "#about", icon: User, isLive: false },
+    { name: "Live Websites", href: "#live-websites", icon: Globe, isLive: true },
+    { name: "Projects", href: "#projects", icon: Code, isLive: false },
+    { name: "Education", href: "#education", icon: GraduationCap, isLive: false },
+    { name: "Skills", href: "#skills", icon: Cpu, isLive: false },
+    { name: "Contact", href: "#contact", icon: Mail, isLive: false },
   ];
 
   return (
@@ -63,17 +64,33 @@ export default function Navbar() {
         </a>
 
         {/* Center Desktop Navigation Links — Crisp & Formal in both light and dark */}
-        <nav className="hidden md:flex items-center gap-1.5 bg-white/95 dark:bg-slate-900/85 p-1.5 rounded-full border border-slate-200/90 dark:border-sky-500/30 backdrop-blur-xl shadow-md dark:shadow-[0_0_25px_rgba(56,189,248,0.15)] absolute left-1/2 -translate-x-1/2">
+        <nav className="hidden md:flex items-center gap-1 bg-white/95 dark:bg-slate-900/85 p-1.5 rounded-full border border-slate-200/90 dark:border-sky-500/30 backdrop-blur-xl shadow-md dark:shadow-[0_0_25px_rgba(56,189,248,0.15)] absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => {
             const Icon = link.icon;
             return (
               <a
                 key={link.name}
                 href={link.href}
-                className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-sky-600 dark:hover:text-white hover:bg-sky-50 dark:hover:bg-sky-500/20 transition-all duration-200"
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 ${
+                  link.isLive
+                    ? "text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/40 hover:bg-emerald-500/25 shadow-sm"
+                    : "text-slate-700 dark:text-slate-200 hover:text-sky-600 dark:hover:text-white hover:bg-sky-50 dark:hover:bg-sky-500/20"
+                }`}
               >
-                <Icon className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+                {link.isLive ? (
+                  <span className="relative flex h-2 w-2 mr-0.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                ) : (
+                  <Icon className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+                )}
                 <span>{link.name}</span>
+                {link.isLive && (
+                  <span className="px-1.5 py-0.5 rounded-full text-[9px] font-mono font-black bg-emerald-500 text-white tracking-wider">
+                    LIVE
+                  </span>
+                )}
               </a>
             );
           })}
@@ -116,10 +133,28 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-bold transition-colors ${
+                    link.isLive
+                      ? "bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30"
+                      : "text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400"
+                  }`}
                 >
-                  <Icon className="w-4 h-4 text-sky-600 dark:text-sky-400" />
-                  {link.name}
+                  <div className="flex items-center gap-3">
+                    {link.isLive ? (
+                      <span className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                      </span>
+                    ) : (
+                      <Icon className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                    )}
+                    <span>{link.name}</span>
+                  </div>
+                  {link.isLive && (
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500 text-white shadow-sm">
+                      100% ONLINE
+                    </span>
+                  )}
                 </a>
               );
             })}
