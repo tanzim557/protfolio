@@ -35,6 +35,51 @@ export default function Projects() {
   // All Projects of Mubassher Alam Tanzim with full README & How to Run Guides
   const projects: Project[] = [
     {
+      id: "fixpoint-erp",
+      title: "FixPoint ERP — Mobile Servicing & Workshop Operating System",
+      category: "fullstack",
+      description: "Stripe/Linear-grade operating system engineered for smartphone repair workshops. Features device intake with IMEI & 3x3 pattern locks, technician kanban workbench, spare parts stock control, POS billing with thermal receipts, and live customer self-service repair tracking.",
+      architecture: "React 19 + TypeScript + Vite + Tailwind CSS + Lucide Icons + QRCode + Canvas Confetti",
+      image: "/fixpoint_erp_ai_preview.jpg",
+      tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Kanban", "POS Billing", "Thermal Printing"],
+      metrics: "Sub-Millisecond Edge • 6-Role ERP System",
+      demoUrl: "https://mobileshop-ashen.vercel.app",
+      githubUrl: "https://github.com/tanzim557/mobileshop",
+      features: [
+        "📱 Front Desk Intake with IMEI capture, cosmetic condition inspection matrix, and interactive 3x3 pattern/PIN lock selector.",
+        "🔧 Technician Kanban Workbench with multi-step repair workflows and 8-point hardware QC verification checklist.",
+        "📦 Spare Parts Inventory Control with SKU tracking, stock threshold alerts, and bin location routing.",
+        "🧾 POS Billing engine calculating labor + parts, tax, diagnostic fee waivers, and printable customer receipts.",
+        "🌐 Deep-linkable customer self-service tracking portal (?track=FP-8492) with live status timeline.",
+        "📊 Executive business intelligence dashboard with technician turnaround metrics and revenue charts.",
+      ],
+      readme: {
+        overview: "FixPoint ERP is a high-performance, Linear/Stripe-aesthetic operating system designed for modern smartphone servicing centers and electronics workshops. Built with React 19, TypeScript, and Vite, it delivers role-based interfaces for Front Desk intake, Technician workbench, Inventory management, Point of Sale billing, and live customer self-tracking.",
+        techStack: "React 19, TypeScript, Vite, Tailwind CSS, Lucide React, qrcode.react, canvas-confetti, Context API State Engine",
+        requirements: [
+          "Node.js 18+ and npm / pnpm / yarn package manager.",
+          "Modern web browser with CSS Grid and SVG support (Chrome, Safari, Edge, Firefox).",
+          "Optional: Thermal receipt printer (ESC/POS or 80mm standard) for physical service tag & invoice printing.",
+        ],
+        howToRun: [
+          "# Clone the repository",
+          "git clone https://github.com/tanzim557/mobileshop.git",
+          "cd mobileshop",
+          "",
+          "# Install dependencies",
+          "npm install",
+          "",
+          "# Start the development server",
+          "npm run dev",
+          "# App opens instantly at http://localhost:5173",
+          "",
+          "# Direct ticket deep-link demo:",
+          "# http://localhost:5173/?track=FP-8492",
+        ],
+        sampleOutput: "{\\n  \\\"system\\\": \\\"FixPoint ERP Engine v2.6\\\",\\n  \\\"active_tickets\\\": 24,\\n  \\\"technicians_on_duty\\\": 3,\\n  \\\"parts_in_stock\\\": 148,\\n  \\\"low_stock_alerts\\\": 4,\\n  \\\"today_revenue\\\": \\\"$59,993\\\",\\n  \\\"customer_tracking_status\\\": \\\"LIVE_SYNCED\\\"\\n}",
+      },
+    },
+    {
       id: "hotel-hisab-android",
       title: "Hotel Hisab — Android Hotel Management App",
       category: "mobile",
@@ -396,10 +441,10 @@ export default function Projects() {
         <div className="flex justify-center mb-10 overflow-x-auto pb-2">
           <div className="flex p-1 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
             {[
-              { id: "all", label: "All Projects (9)", icon: null },
+              { id: "all", label: "All Projects (10)", icon: null },
               { id: "mobile", label: "📱 Android Apps", icon: null },
               { id: "iot", label: "IoT & Hardware", icon: null },
-              { id: "fullstack", label: "Hotel & Web Apps", icon: null },
+              { id: "fullstack", label: "ERP & Full-Stack", icon: null },
               { id: "ai", label: "AI & TeleMedicine", icon: null },
               { id: "cloud", label: "Physics & Compilers", icon: null },
               { id: "frontend", label: "3D Simulators & Games", icon: null },

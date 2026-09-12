@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import FixPointSpotlight from "@/components/FixPointSpotlight";
 import LiveWebsites from "@/components/LiveWebsites";
 import About from "@/components/About";
 import Education from "@/components/Education";
@@ -19,11 +20,14 @@ export default function Home() {
         {/* Sticky Header */}
         <Navbar />
 
-      {/* Hero Section */}
-      <Hero />
+        {/* Hero Section */}
+        <Hero />
 
-      {/* Live Running Websites Showcase */}
-      <LiveWebsites />
+        {/* 2026 Flagship System Spotlight: FixPoint ERP */}
+        <FixPointSpotlight />
+
+        {/* Live Running Websites Showcase */}
+        <LiveWebsites />
 
       {/* About Myself Section */}
       <About />

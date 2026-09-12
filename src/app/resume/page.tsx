@@ -129,6 +129,19 @@ export default function ResumePage() {
             <div className="space-y-1">
               <div className="flex justify-between items-baseline">
                 <h3 className="font-extrabold text-slate-900 dark:text-white print:text-black text-sm sm:text-base">
+                  FixPoint ERP — Mobile Servicing &amp; Workshop Operating System
+                </h3>
+                <span className="font-mono text-xs text-sky-600 dark:text-sky-400 print:text-slate-600">React 19 / TypeScript / Vite / Tailwind</span>
+              </div>
+              <p className="text-slate-700 dark:text-slate-300 print:text-slate-700 text-xs leading-relaxed">
+                Engineered full-scale mobile phone repair shop ERP featuring device intake with 3x3 pattern lock selector, technician kanban workbench, spare parts stock control, POS billing engine with thermal receipt generation, and real-time customer tracking portal (Live: mobileshop-ashen.vercel.app).
+              </p>
+            </div>
+
+            {/* Project 2 */}
+            <div className="space-y-1">
+              <div className="flex justify-between items-baseline">
+                <h3 className="font-extrabold text-slate-900 dark:text-white print:text-black text-sm sm:text-base">
                   ESP32 Real-Time IoT Water Level Telemetry Monitor
                 </h3>
                 <span className="font-mono text-xs text-sky-600 dark:text-sky-400 print:text-slate-600">Embedded C++ / Firebase / Web</span>

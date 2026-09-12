@@ -19,7 +19,11 @@ import {
   Zap,
   CheckCircle2,
   Hotel,
-  ArrowUpRight
+  ArrowUpRight,
+  Smartphone,
+  Wrench,
+  Boxes,
+  CreditCard
 } from "lucide-react";
 
 interface SubLink {
@@ -57,6 +61,56 @@ export default function LiveWebsites() {
   };
 
   const liveSites: LiveSite[] = [
+    {
+      id: "fixpoint-erp-live",
+      title: "FixPoint ERP — Mobile Servicing & Workshop OS",
+      category: "Enterprise ERP / Mobile Workshop",
+      platform: "Vercel Global Edge",
+      platformColor: "bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border-cyan-500/40",
+      status: "Production Live",
+      url: "https://mobileshop-ashen.vercel.app",
+      description:
+        "Stripe/Linear-grade ERP engineered for smartphone repair workshops. Features front-desk intake with IMEI & 3x3 pattern lock selector, technician kanban workbench, spare parts stock control, POS billing with thermal receipts, and live customer self-service repair tracking.",
+      image: "/fixpoint_erp_ai_preview.jpg",
+      icon: Smartphone,
+      techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Kanban Engine", "Thermal POS"],
+      highlights: [
+        "Front Desk intake with 3x3 pattern lock drawer & IMEI inspection",
+        "Technician Kanban workbench with 8-point hardware QC checklist"
+      ],
+      subLinks: [
+        {
+          label: "Front Desk",
+          url: "https://mobileshop-ashen.vercel.app/",
+          badge: "Intake",
+          icon: Smartphone
+        },
+        {
+          label: "Workbench",
+          url: "https://mobileshop-ashen.vercel.app/",
+          badge: "Kanban",
+          icon: Wrench
+        },
+        {
+          label: "Inventory",
+          url: "https://mobileshop-ashen.vercel.app/",
+          badge: "Parts",
+          icon: Boxes
+        },
+        {
+          label: "POS Billing",
+          url: "https://mobileshop-ashen.vercel.app/",
+          badge: "Receipts",
+          icon: CreditCard
+        },
+        {
+          label: "Live Tracking",
+          url: "https://mobileshop-ashen.vercel.app/?track=FP-8492",
+          badge: "Realtime",
+          icon: Globe
+        }
+      ]
+    },
     {
       id: "pet-care-live",
       title: "Pet Care & Veterinary Platform",
@@ -213,8 +267,8 @@ export default function LiveWebsites() {
           </p>
         </div>
 
-        {/* 3-Column Premium Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Premium Production Deployments Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {liveSites.map((site) => {
             const SiteIcon = site.icon;
             const isMainCopied = copiedUrl === site.url;
