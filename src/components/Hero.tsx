@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Download, CheckCircle2, Play, Globe, Layers, Cpu, Code2, Smartphone, Sparkles } from "lucide-react";
+import { ArrowRight, Download, CheckCircle2, Play, Globe, Layers, Cpu, Code2 } from "lucide-react";
 
 export default function Hero() {
   const profilePic = "/profile.jpg";
@@ -135,58 +135,14 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Featured Flagship Release Callout */}
-            <div className="pt-1">
-              <a
-                href="#fixpoint-spotlight"
-                className="group relative flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-sky-500/10 via-indigo-500/15 to-purple-500/10 border border-sky-500/40 hover:border-sky-400 shadow-[0_0_25px_rgba(56,189,248,0.15)] hover:shadow-[0_0_35px_rgba(56,189,248,0.3)] transition-all text-left"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white shadow-md group-hover:scale-110 transition-transform shrink-0">
-                    <Smartphone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        FLAGSHIP RELEASE LIVE
-                      </span>
-                      <span className="text-[11px] font-mono text-sky-600 dark:text-sky-400 font-semibold hidden sm:inline">FixPoint ERP v2.6</span>
-                    </div>
-                    <h4 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors leading-snug">
-                      FixPoint ERP — Mobile Servicing Operating System
-                    </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-1">
-                      Live phone intake, technician kanban, parts inventory &amp; POS billing &rarr;
-                    </p>
-                  </div>
-                </div>
-
-                <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-500 text-white text-xs font-bold shrink-0 shadow-md group-hover:scale-105 transition-transform">
-                  <span>Explore Showcase</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
-              </a>
-            </div>
-
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-              <a
-                href="https://mobileshop-ashen.vercel.app"
-                target="_blank"
-                rel="noreferrer"
-                className="shimmer-btn flex items-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 text-white font-black text-xs sm:text-sm shadow-[0_0_25px_rgba(16,185,129,0.4)] hover:scale-[1.03] transition-transform duration-200"
-              >
-                <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                <span>Live FixPoint ERP ↗</span>
-              </a>
-
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
               <a
                 href="#projects"
-                className="flex items-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 text-white font-extrabold text-xs sm:text-sm shadow-[0_0_25px_rgba(56,189,248,0.3)] hover:scale-[1.03] transition-transform duration-200"
+                className="shimmer-btn flex items-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 text-white font-extrabold text-xs sm:text-sm shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] transition-transform duration-200"
               >
                 <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                <span>All Projects</span>
+                <span>Explore Projects &amp; Code</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -194,10 +150,10 @@ export default function Hero() {
                 href="/resume"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 px-4.5 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 shadow-sm dark:bg-slate-900/80 dark:hover:bg-slate-800 dark:text-slate-200 dark:border-slate-700 hover:border-sky-400 transition-all font-semibold text-xs sm:text-sm"
+                className="flex items-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 shadow-sm dark:bg-slate-900/80 dark:hover:bg-slate-800 dark:text-slate-200 dark:border-slate-700 hover:border-sky-400 transition-all font-semibold text-xs sm:text-sm"
               >
                 <Download className="w-4 h-4 text-sky-600 dark:text-sky-400" />
-                <span>Resume</span>
+                <span>View &amp; Print Formal Resume</span>
               </a>
             </div>
 
