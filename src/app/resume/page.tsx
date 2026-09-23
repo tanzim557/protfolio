@@ -125,7 +125,46 @@ export default function ResumePage() {
 
           <div className="space-y-3.5 text-xs sm:text-sm">
             
-            {/* Project 1 */}
+            {/* Project: SchoolPulse */}
+            <div className="space-y-1">
+              <div className="flex justify-between items-baseline">
+                <h3 className="font-extrabold text-slate-900 dark:text-white print:text-black text-sm sm:text-base">
+                  SchoolPulse SaaS — Next-Gen School Management Platform
+                </h3>
+                <span className="font-mono text-xs text-sky-600 dark:text-sky-400 print:text-slate-600">React 19 / TypeScript / Vite / Tailwind</span>
+              </div>
+              <p className="text-slate-700 dark:text-slate-300 print:text-slate-700 text-xs leading-relaxed">
+                Engineered web-based school management SaaS platform featuring 5-role switching (Super Admin, Teacher, Student, Parent, Accountant), interactive visual routine builder with conflict detection, dynamic GPA report card generator, tuition fee ledger, and AI Copilot (Live: ideal-school-portal.vercel.app).
+              </p>
+            </div>
+
+            {/* Project: AURA LUXE */}
+            <div className="space-y-1">
+              <div className="flex justify-between items-baseline">
+                <h3 className="font-extrabold text-slate-900 dark:text-white print:text-black text-sm sm:text-base">
+                  AURA LUXE — High-Performance Luxury E-Commerce Platform
+                </h3>
+                <span className="font-mono text-xs text-sky-600 dark:text-sky-400 print:text-slate-600">React 19 / TypeScript / Vite / Tailwind</span>
+              </div>
+              <p className="text-slate-700 dark:text-slate-300 print:text-slate-700 text-xs leading-relaxed">
+                Engineered modern luxury lifestyle e-commerce marketplace featuring multi-role switcher (Root Master Admin, Verified Seller, VIP Platinum Customer), technical specs matrix (titanium chronographs, ANC audio), slide-over cart drawer, and live delivery tracking (Live: ecommarce-zeta.vercel.app).
+              </p>
+            </div>
+
+            {/* Project: McLaren 750S */}
+            <div className="space-y-1">
+              <div className="flex justify-between items-baseline">
+                <h3 className="font-extrabold text-slate-900 dark:text-white print:text-black text-sm sm:text-base">
+                  McLaren 750S — Interactive 3D WebGL Configurator &amp; Showroom
+                </h3>
+                <span className="font-mono text-xs text-sky-600 dark:text-sky-400 print:text-slate-600">Next.js 14 / Three.js / R3F / GSAP</span>
+              </div>
+              <p className="text-slate-700 dark:text-slate-300 print:text-slate-700 text-xs leading-relaxed">
+                Engineered real-time 3D supercar configurator with Three.js and React Three Fiber featuring 360° orbital camera exploration, dynamic paint/caliper customizer, mechanical hotspots (4.0L twin-turbo V8, carbon chassis, active aero), day/night lighting environments, and Web Audio API engine acoustics (Live: mclaren-3d-showcase.vercel.app).
+              </p>
+            </div>
+
+            {/* Project 2 */}
             <div className="space-y-1">
               <div className="flex justify-between items-baseline">
                 <h3 className="font-extrabold text-slate-900 dark:text-white print:text-black text-sm sm:text-base">

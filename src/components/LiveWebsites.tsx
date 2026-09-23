@@ -23,7 +23,12 @@ import {
   Smartphone,
   Wrench,
   Boxes,
-  CreditCard
+  CreditCard,
+  Car,
+  GraduationCap,
+  Calendar,
+  BookOpen,
+  Bot
 } from "lucide-react";
 
 interface SubLink {
@@ -61,6 +66,153 @@ export default function LiveWebsites() {
   };
 
   const liveSites: LiveSite[] = [
+    {
+      id: "schoolpulse-saas-live",
+      title: "SchoolPulse SaaS — Next-Gen School Management Platform",
+      category: "EdTech SaaS / Academic Management",
+      platform: "Vercel Global Edge",
+      platformColor: "bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 border-indigo-500/40",
+      status: "Production Live",
+      url: "https://ideal-school-portal.vercel.app",
+      description:
+        "Full-stack web-based school management SaaS platform built with React, Vite, and Tailwind CSS. Features multi-role access (Super Admin, Teacher, Student, Parent, Accountant), interactive visual routine builder with conflict detection, dynamic report card GPA calculator, tuition fee collection ledger, course materials repository, and AI Copilot assistant.",
+      image: "/school_pulse_preview.jpg",
+      icon: GraduationCap,
+      techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Visual Routine Engine", "AI Copilot"],
+      highlights: [
+        "Multi-role portal switching: Super Admin, Teacher, Student, Parent & Bursar Accountant",
+        "Visual timetable routine builder with conflict detection & course materials distribution",
+        "Automated grade reporting & tuition fee invoicing with real-time AI handbook assistant"
+      ],
+      subLinks: [
+        {
+          label: "Live Portal",
+          url: "https://ideal-school-portal.vercel.app",
+          badge: "Main App",
+          icon: Globe
+        },
+        {
+          label: "Routine Engine",
+          url: "https://ideal-school-portal.vercel.app",
+          badge: "Visual",
+          icon: Calendar
+        },
+        {
+          label: "Report Cards",
+          url: "https://ideal-school-portal.vercel.app",
+          badge: "GPA Calc",
+          icon: BookOpen
+        },
+        {
+          label: "Tuition Finance",
+          url: "https://ideal-school-portal.vercel.app",
+          badge: "Billing",
+          icon: CreditCard
+        },
+        {
+          label: "AI Copilot",
+          url: "https://ideal-school-portal.vercel.app",
+          badge: "AI Assistant",
+          icon: Bot
+        }
+      ]
+    },
+    {
+      id: "aura-luxe-ecommerce-live",
+      title: "AURA LUXE — High-Performance Luxury E-Commerce Platform",
+      category: "Luxury E-Commerce / Multi-Role Marketplace",
+      platform: "Vercel Global Edge",
+      platformColor: "bg-purple-500/15 text-purple-600 dark:text-purple-400 border-purple-500/40",
+      status: "Production Live",
+      url: "https://ecommarce-zeta.vercel.app",
+      description:
+        "Ultra-modern luxury lifestyle e-commerce platform and multi-role marketplace. Features Root Master admin dashboard, multi-account portal switcher (Seller, VIP Platinum Customer, Master Admin), product specification matrix (titanium chronographs, ANC audio, merino outerwear), dynamic wishlist, slide-over cart drawer, and live order tracking.",
+      image: "/aura_luxe_preview.jpg",
+      icon: ShoppingBag,
+      techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Cart Drawer", "Multi-Role Admin"],
+      highlights: [
+        "Multi-portal architecture: Marketplace Root Master Admin, Seller Portal & VIP Customer",
+        "High-touch product configurators: titanium chronographs, ANC audio & merino apparel",
+        "Real-time slide-over cart, instant checkout simulation & live delivery tracker"
+      ],
+      subLinks: [
+        {
+          label: "Shop Storefront",
+          url: "https://ecommarce-zeta.vercel.app",
+          badge: "Storefront",
+          icon: Globe
+        },
+        {
+          label: "Master Admin",
+          url: "https://ecommarce-zeta.vercel.app",
+          badge: "Root Admin",
+          icon: ShieldCheck
+        },
+        {
+          label: "VIP Portal",
+          url: "https://ecommarce-zeta.vercel.app",
+          badge: "VIP Member",
+          icon: Sparkles
+        },
+        {
+          label: "Cart & Checkout",
+          url: "https://ecommarce-zeta.vercel.app",
+          badge: "Realtime",
+          icon: ShoppingBag
+        },
+        {
+          label: "Order Tracking",
+          url: "https://ecommarce-zeta.vercel.app",
+          badge: "Live Sync",
+          icon: MapPin
+        }
+      ]
+    },
+    {
+      id: "mclaren-3d-showcase",
+      title: "McLaren 750S — Interactive 3D WebGL Supercar Showroom",
+      category: "Interactive 3D WebGL / Automotive",
+      platform: "Vercel Global Edge",
+      platformColor: "bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/40",
+      status: "Production Live",
+      url: "https://mclaren-3d-showcase.vercel.app",
+      description:
+        "Cutting-edge 3D interactive supercar showcase and real-time configurator engineered with Three.js, React Three Fiber, and GSAP. Features 360° orbital camera exploration, dynamic paint and brake caliper customizer, interactive mechanical hotspots (4.0L V8 twin-turbo, carbon monocoque, active rear wing), day/night studio lighting environments, and realistic engine rev audio engine.",
+      image: "/mclaren_3d_preview.jpg",
+      icon: Car,
+      techStack: ["Next.js 14", "React Three Fiber", "Three.js", "GSAP", "Tailwind CSS", "Web Audio API", "GLTF / WebGL"],
+      highlights: [
+        "Real-time 60FPS 3D McLaren 750S model with physically-based rendering (PBR) metallic finish",
+        "Interactive mechanical hotspots: 740HP M840T engine, active aero airbrake & carbon ceramic brakes",
+        "Dynamic studio lighting presets (Showroom, Golden Track, Midnight Neon) & custom paint finishes"
+      ],
+      subLinks: [
+        {
+          label: "3D Showroom",
+          url: "https://mclaren-3d-showcase.vercel.app",
+          badge: "WebGL",
+          icon: Car
+        },
+        {
+          label: "Paint Configurator",
+          url: "https://mclaren-3d-showcase.vercel.app",
+          badge: "Realtime",
+          icon: Sparkles
+        },
+        {
+          label: "Hotspot Specs",
+          url: "https://mclaren-3d-showcase.vercel.app",
+          badge: "740 HP",
+          icon: Zap
+        },
+        {
+          label: "V8 Sound Engine",
+          url: "https://mclaren-3d-showcase.vercel.app",
+          badge: "Audio",
+          icon: Radio
+        }
+      ]
+    },
     {
       id: "fixpoint-erp-live",
       title: "FixPoint ERP — Mobile Servicing & Workshop OS",
