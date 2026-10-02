@@ -28,7 +28,10 @@ import {
   GraduationCap,
   Calendar,
   BookOpen,
-  Bot
+  Bot,
+  Activity,
+  Stethoscope,
+  Users
 } from "lucide-react";
 
 interface SubLink {
@@ -66,6 +69,63 @@ export default function LiveWebsites() {
   };
 
   const liveSites: LiveSite[] = [
+    {
+      id: "medicore-hospital-hms-live",
+      title: "MediCore HMS — Enterprise Hospital & Clinical Command Center",
+      category: "Healthcare SaaS / Clinical Operations",
+      platform: "Vercel Global Edge",
+      platformColor: "bg-teal-500/15 text-teal-600 dark:text-teal-400 border-teal-500/40",
+      status: "Production Live",
+      url: "https://frontend-nine-eta-q0mgfnntxh.vercel.app/login",
+      description:
+        "Full-scale enterprise tertiary hospital management system & clinical command center engineered with React 19, TypeScript, Vite, and Tailwind CSS. Features 1-click multi-role login (Super Admin, Dr. Sarah Cardiologist, Senior Nurse, Registered Patient), real-time OPD patient queuing, specialist doctor roster schedule, clinical appointments booking, telemetry vital monitoring, and staff payroll management.",
+      image: "/medicore_hms_preview.jpg",
+      icon: Activity,
+      techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "1-Click Multi-Role", "OPD Queue Engine", "HIPAA Ready"],
+      highlights: [
+        "1-Click persona switching for Super Admin, Dr. Sarah (Cardiologist), Senior Nurse & Patient",
+        "Real-time OPD queue management, specialist doctor roster & direct slot booking engine",
+        "Clinical records administration, role-based access control & 256-bit audit-logged infrastructure"
+      ],
+      subLinks: [
+        {
+          label: "Auth Portal",
+          url: "https://frontend-nine-eta-q0mgfnntxh.vercel.app/login",
+          badge: "1-Click Demo",
+          icon: LogIn
+        },
+        {
+          label: "Command Center",
+          url: "https://frontend-nine-eta-q0mgfnntxh.vercel.app/dashboard",
+          badge: "Dashboard",
+          icon: Activity
+        },
+        {
+          label: "Doctor Roster",
+          url: "https://frontend-nine-eta-q0mgfnntxh.vercel.app/doctors",
+          badge: "Specialists",
+          icon: Stethoscope
+        },
+        {
+          label: "Appointments",
+          url: "https://frontend-nine-eta-q0mgfnntxh.vercel.app/appointments",
+          badge: "Booking",
+          icon: Calendar
+        },
+        {
+          label: "Patient Registry",
+          url: "https://frontend-nine-eta-q0mgfnntxh.vercel.app/patients",
+          badge: "Records",
+          icon: Users
+        },
+        {
+          label: "Hospital Home",
+          url: "https://frontend-nine-eta-q0mgfnntxh.vercel.app/",
+          badge: "Portal",
+          icon: Globe
+        }
+      ]
+    },
     {
       id: "schoolpulse-saas-live",
       title: "SchoolPulse SaaS — Next-Gen School Management Platform",

@@ -35,6 +35,47 @@ export default function Projects() {
   // All Projects of Mubassher Alam Tanzim with full README & How to Run Guides
   const projects: Project[] = [
     {
+      id: "medicore-hospital-hms",
+      title: "MediCore HMS — Enterprise Hospital & Clinical Command Center",
+      category: "fullstack",
+      description: "Full-scale enterprise tertiary hospital management system & clinical command center engineered with React 19, TypeScript, Vite, and Tailwind CSS. Features 1-click multi-role login (Super Admin, Dr. Sarah Cardiologist, Senior Nurse, Registered Patient), real-time OPD patient queuing, specialist doctor roster schedule, clinical appointments booking, telemetry vital monitoring, and staff payroll management.",
+      architecture: "React 19 + TypeScript + Vite + Tailwind CSS + Context API + 1-Click Multi-Role + Vercel Edge",
+      image: "/medicore_hms_preview.jpg",
+      tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Hospital Management", "Multi-Role Auth", "Healthcare SaaS"],
+      metrics: "4-Role Instant Switch • Real-Time OPD Queue • 256-Bit SSL",
+      demoUrl: "https://frontend-nine-eta-q0mgfnntxh.vercel.app/login",
+      githubUrl: "https://github.com/tanzim557",
+      features: [
+        "🏥 1-Click Multi-Role Authentication: Instant demo persona login for Super Admin, Dr. Sarah (Cardiologist), Senior Nurse, and Registered Patient.",
+        "📊 Clinical Command Center Dashboard: High-level overview of live OPD patient queue, bed occupancy status, ICU telemetry vitals, and revenue analytics.",
+        "👨‍⚕️ Specialist Doctor Roster: Department-wise physician directory with specialty filters (Cardiology, Oncology, Neuro, Ortho), consult fees, and live OPD availability.",
+        "📅 Real-Time Appointment Engine: Direct slot scheduling, patient queue token allocation, and real-time status tracking.",
+        "📋 Electronic Medical Records & Patient Registry: Centralized patient database with medical history, diagnostic reports, and contact info.",
+        "💼 Super Admin Control: Role-based user permissions, staff salary payroll ledger, and 24/7 audit logging."
+      ],
+      readme: {
+        overview: "MediCore HMS is a mission-critical, modern web-based tertiary hospital management system designed to streamline clinical workflows, patient appointments, and administrative oversight. Built with React 19, TypeScript, and Tailwind CSS, it offers lightning-fast responsiveness with 1-click persona switching for doctors, nurses, admins, and patients.",
+        techStack: "React 19, TypeScript, Vite, Tailwind CSS, Lucide React, Context API State Architecture, Vercel Edge Deployment",
+        requirements: [
+          "Node.js 18+ and npm / pnpm / yarn package manager.",
+          "Modern web browser (Chrome, Edge, Firefox, Safari) with modern CSS Grid support."
+        ],
+        howToRun: [
+          "# Clone the repository or open live demo",
+          "git clone https://github.com/tanzim557/medicore-hospital.git",
+          "cd medicore-hospital",
+          "",
+          "# Install dependencies",
+          "npm install",
+          "",
+          "# Launch development server",
+          "npm run dev",
+          "# Open http://localhost:5173 to explore MediCore HMS"
+        ],
+        sampleOutput: "{\\n  \\\"system\\\": \\\"MediCore HMS v3.0\\\",\\n  \\\"roles\\\": [\\\"Super Admin\\\", \\\"Doctor\\\", \\\"Nurse\\\", \\\"Patient\\\"],\\n  \\\"modules\\\": [\\\"OPD Queue\\\", \\\"Doctor Roster\\\", \\\"Appointments\\\", \\\"Patient Registry\\\", \\\"Payroll\\\"],\\n  \\\"status\\\": \\\"PRODUCTION_LIVE_VERCEL\\\"\\n}"
+      }
+    },
+    {
       id: "schoolpulse-saas",
       title: "SchoolPulse SaaS — Next-Gen School Management Platform",
       category: "fullstack",
