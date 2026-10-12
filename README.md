@@ -1,144 +1,61 @@
-# 🚀 Mubassher Alam Tanzim — Developer Portfolio
+﻿# ðŸ’¼ Mubassher Alam Tanzim â€” Developer Portfolio
 
-A modern, fully interactive developer portfolio built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**. Features dark/light mode, animated sections, interactive terminal, project README modals, and a live Vercel deployment.
+[![Next.js](https://img.shields.io/badge/Next.js-16%2B-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
----
-
-## 🏨 Featured Project: Mamun Hotel & Restaurant Management System
-
-A full-stack enterprise hotel and restaurant portal built with **Laravel PHP 10** and **MySQL**.
-
-### ✨ Features
-- **Room Booking** — Online room reservation with real-time availability tracking
-- **Dining Table Reservation** — Restaurant table booking with time-slot management
-- **Food Order POS** — Point-of-sale food ordering system with kitchen queue
-- **Automated Billing** — Tax calculation and printable invoice generation
-- **Admin Dashboard** — Executive dashboard for daily revenue, room status & staff management
-
-### 🛠️ Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Backend Framework | Laravel PHP 10 |
-| Database | MySQL (Eloquent ORM) |
-| Frontend | Blade Templates + Bootstrap 5 |
-| Auth | Laravel Sanctum / Session Guard |
-
-### 📋 Requirements
-- PHP >= 8.1 (with PDO, OpenSSL, Mbstring extensions)
-- Composer Package Manager
-- MySQL / MariaDB (XAMPP, Laragon, or standalone)
-
-### ⚡ How to Run
-```bash
-git clone https://github.com/mubassher/mamun-restaurant-laravel.git
-cd mamun-restaurant-laravel
-composer install
-cp .env.example .env
-php artisan key:generate
-# Configure DB_DATABASE, DB_USERNAME, DB_PASSWORD in .env
-php artisan migrate --seed
-php artisan serve
-# Open http://localhost:8000
-```
-
-### 📊 Sample Output
-```json
-{
-  "hotel_name": "Mamun Hotel & Restaurant",
-  "room_status": "Occupied (Room 304)",
-  "active_orders": 14,
-  "daily_revenue": "$4,850.00"
-}
-```
+> A cutting-edge, high-performance personal developer portfolio built with Next.js 16 (App Router), TypeScript, Tailwind CSS, and Framer Motion. Engineered with sleek dark/light mode aesthetics, an interactive developer terminal, comprehensive project modals, and optimized for Vercel deployment.
 
 ---
 
-## 🌐 Portfolio Tech Stack
+## ðŸŒŸ Key Features
 
-| Technology | Version |
-|---|---|
-| Next.js | 16.3.4 |
-| React | 19.2.8 |
-| TypeScript | ^5 |
-| Tailwind CSS | ^4 |
-| Framer Motion | ^13 |
-| Lucide React | ^1.39 |
+- **ðŸ’» Interactive Developer Terminal**: Built-in interactive command terminal supporting custom commands (help, bout, projects, skills, contact, clear).
+- **ðŸŒ“ Dynamic Dark / Light Themes**: Flawless system and user-toggled theme transitions with zero layout shift.
+- **ðŸ“‚ Detailed Project Showcases**: Interactive project modals with live demo links, GitHub buttons, and architectural deep-dives.
+- **âœ¨ Fluid Micro-Interactions**: Custom spring animations, scroll spy navigation, and Canvas Confetti triggers.
+- **ðŸ” CEO Audit & Recruiter Portal**: CeoAuditModal.tsx provides quick high-level recruiter executive summaries and resume downloads.
 
 ---
 
-## 🖥️ All Projects
+## ðŸ› ï¸ Tech Stack
 
-| # | Project | Category | Stack |
-|---|---|---|---|
-| 1 | Mamun Hotel & Restaurant Management | Full-Stack | Laravel + MySQL |
-| 2 | ESP32 IoT Water Level Monitor | IoT / Hardware | ESP32 C++ + Firebase |
-| 3 | TeleMedicine Platform with AI Whisper | AI / Healthcare | Laravel + Python Whisper |
-| 4 | Pets Care & Veterinary Management | Full-Stack | PHP + MySQL |
-| 5 | 3D Car Simulator & WebGL Racing Engine | Frontend / 3D | JavaScript + Three.js |
-| 6 | PhysiCode — Physics Simulation Engine | Systems | C++ + WebAssembly |
-| 7 | Compiler Design & Financial Rules Parser | Full-Stack | C/C++ + Flex & Bison |
-| 8 | Antigravity Browser Game Engine | Frontend / Games | Vite + TypeScript |
+- **Framework**: Next.js 16 (App Router, Turbopack)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS, PostCSS, Lucide Icons
+- **Animation**: Framer Motion, Canvas Confetti
 
 ---
 
-## 🚀 Getting Started (Portfolio Dev Server)
+## ðŸš€ Getting Started
 
-```bash
-git clone https://github.com/mubassher/portfolio.git
-cd portfolio
+`ash
+# Clone the repository
+git clone https://github.com/tanzim557/protfolio.git
+cd protfolio
+
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
-```
+`
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-## 📦 Deploy on Vercel
-
-This portfolio is deployed live on Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app)
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy to production
-vercel --prod
-```
+Visit [http://localhost:3000](http://localhost:3000) to view the live portfolio.
 
 ---
 
-## 📁 Project Structure
-
-```
-portfolio/
-├── src/
-│   ├── app/
-│   │   ├── page.tsx          # Main page
-│   │   ├── layout.tsx        # Root layout
-│   │   └── globals.css       # Global styles
-│   └── components/
-│       ├── Hero.tsx          # Landing hero section
-│       ├── Projects.tsx      # Projects grid + README modals
-│       ├── About.tsx         # About section
-│       ├── Skills.tsx        # Skills section
-│       ├── Experience.tsx    # Work experience
-│       ├── Contact.tsx       # Contact form
-│       ├── Footer.tsx        # Footer
-│       └── Navbar.tsx        # Navigation
-├── public/                   # Static assets
-├── next.config.ts            # Next.js config
-└── package.json
-```
-
----
-
-## 👨‍💻 Author
+## ðŸ‘¤ Author
 
 **Mubassher Alam Tanzim**  
-Full-Stack Developer | IoT Engineer | AI Enthusiast
+- GitHub: [@tanzim557](https://github.com/tanzim557)
+- Email: mubassheralam0@gmail.com
+- Location: Bangladesh
 
-> *"Building systems that work — from silicon to cloud."*
+---
+
+## ðŸ“„ License
+This project is licensed under the MIT License.
